@@ -14,8 +14,6 @@ def main(dataset_split):
 
     if dataset_split == 'valid':
         dataset = config.valid_dataset
-    
-    dataset.records = dataset.records[:100]
 
     dataset.transform = transforms.Compose([
         transforms.Resize(config.image_size),

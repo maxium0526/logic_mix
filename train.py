@@ -19,9 +19,7 @@ def main():
     output_dir = 'output/train'
 
     train_dataset = config.train_dataset
-    train_dataset.records = train_dataset.records[:100]
     valid_dataset = config.valid_dataset
-    valid_dataset.records = valid_dataset.records[:100]
 
     train_dataset.transform = torchvision.transforms.Compose([
         *config.data_aug,
