@@ -1,8 +1,19 @@
 from mlcpl import dataset
 import torchvision
 
+# config the dataset here
+
 train_dataset = dataset.MSCOCO('/Users/max/Documents/datasets/COCO', split='train').drop_labels_random(0.5)
 valid_dataset = dataset.MSCOCO('/Users/max/Documents/datasets/COCO', split='valid')
+
+## example: VG-200 with label proportion 10%
+# train_dataset = dataset.VG_200('/Users/max/Documents/datasets/VG', split='train').drop_labels_random(0.1)
+# valid_dataset = dataset.VG_200('/Users/max/Documents/datasets/VG', split='valid')
+
+## example: VOC 2007 with label proportion 90%
+# train_dataset = dataset.Pascal_VOC_2007('/Users/max/Documents/datasets/VOC2007', split='train').drop_labels_random(0.9)
+# valid_dataset = dataset.Pascal_VOC_2007('/Users/max/Documents/datasets/VOC2007', split='valid')
+
 
 image_size = (448, 448)
 
